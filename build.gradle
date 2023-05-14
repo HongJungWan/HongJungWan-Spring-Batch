@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.11'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'batch'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 스프링 부트 설정
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // 람북 설정
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Spring Data JPA 설정
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring Batch 설정
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+
+    // Mysql 설정
+    runtimeOnly 'mysql:mysql-connector-java:8.0.26'
+
+    // JDBC API 설정
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // Spring Configuration Processor 설정
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-test-autoconfigure'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

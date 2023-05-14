@@ -1,2 +1,1 @@
-# HongJungWan-Spring-Batch
-HongJungWan-Spring-Batch 🔍
+# 🦮 반려견 견주 𝙾𝙽/𝙾𝙵𝙵 모임 Batch Server

@@ -34,7 +34,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-batch'
 
     // Mysql 설정
-    implementation 'mysql:mysql-connector-java:8.0.23'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.26'
 
     // JDBC API 설정
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'

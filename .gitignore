@@ -41,3 +41,6 @@ gradlew
 gradlew.bat
 settings.gradle
 gradle-wrapper.properties
+application-local.yml
+application.yml
+docker-compose.yml

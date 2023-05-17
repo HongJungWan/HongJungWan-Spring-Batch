@@ -23,6 +23,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * desc: 주문 테이블 -> 정산 테이블 [데이터 이관]
@@ -59,34 +60,15 @@ public class TrMigrationConfig {
         return stepBuilderFactory.get("trMigrationStep")
                 .<Orders, Accounts>chunk(5)
                 .reader(trOrdersReader)
-//                .writer(new ItemWriter() {
-//                    @Override
-//                    public void write(List items) throws Exception {
-//                        items.forEach(System.out::println);
-//                    }
-//                })
                 .processor(trOrderProcessor)
                 .writer(trOrdersWriter)
                 .build();
     }
 
-//    @StepScope
-//    @Bean
-//    public RepositoryItemWriter<Accounts> trOrdersWriter() {
-//        return new RepositoryItemWriterBuilder<Accounts>()
-//                .repository(accountsRepository)
-//                .methodName("save")
-//                .build();
-//    }
-
     @StepScope
     @Bean
     public ItemWriter<Accounts> trOrdersWriter() {
-        return items -> {
-            for (Accounts item : items) {
-                accountsRepository.save(item);
-            }
-        };
+        return items -> write(items);
     }
 
     @StepScope
@@ -106,5 +88,11 @@ public class TrMigrationConfig {
                 .arguments(Arrays.asList())
                 .sorts(Collections.singletonMap("id", Sort.Direction.ASC))
                 .build();
+    }
+
+    private void write(List<? extends Accounts> items) {
+        for (Accounts item : items) {
+            accountsRepository.save(item);
+        }
     }
 }

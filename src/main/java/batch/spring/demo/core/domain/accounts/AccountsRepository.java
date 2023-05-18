@@ -1,4 +1,4 @@
-package batch.spring.core.domain.accounts;
+package batch.spring.demo.core.domain.accounts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

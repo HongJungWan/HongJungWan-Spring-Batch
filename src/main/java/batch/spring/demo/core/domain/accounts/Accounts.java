@@ -1,6 +1,6 @@
-package batch.spring.core.domain.accounts;
+package batch.spring.demo.core.domain.accounts;
 
-import batch.spring.core.domain.orders.Orders;
+import batch.spring.demo.core.domain.orders.Orders;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

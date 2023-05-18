@@ -1,6 +1,6 @@
-package batch.spring.job.validated_param;
+package batch.spring.demo.job.validated_param;
 
-import batch.spring.job.validated_param.validator.FileParamValidator;
+import batch.spring.demo.job.validated_param.validator.FileParamValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.Job;

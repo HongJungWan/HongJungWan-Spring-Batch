@@ -1,9 +1,9 @@
-package batch.spring.job.db_data_read_write;
+package batch.spring.demo.job.db_data_read_write;
 
-import batch.spring.core.domain.accounts.Accounts;
-import batch.spring.core.domain.accounts.AccountsRepository;
-import batch.spring.core.domain.orders.Orders;
-import batch.spring.core.domain.orders.OrdersRepository;
+import batch.spring.demo.core.domain.accounts.Accounts;
+import batch.spring.demo.core.domain.accounts.AccountsRepository;
+import batch.spring.demo.core.domain.orders.Orders;
+import batch.spring.demo.core.domain.orders.OrdersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

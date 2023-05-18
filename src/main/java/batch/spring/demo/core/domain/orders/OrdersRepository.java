@@ -1,4 +1,4 @@
-package batch.spring.core.domain.orders;
+package batch.spring.demo.core.domain.orders;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
